@@ -1,0 +1,149 @@
+<style>
+section{padding-left:260px;padding-right:5%;}
+#navbar{position:fixed;display:grid;grid-template-columns:220px;grid-template-rows: 170px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;padding-left:20px;align-items:center;width:auto;height:100%;top:0;left:0;bottom:0;
+background:black;color:white;font-size:17px}
+header{ font-family:work sans;font-size:30px}
+#code{font-size:15px;padding: 10 0 10 15;background-color:rgba(150,150,150,0.2);width:100%;box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}
+section{padding-bottom:70px}
+p{font-family:pt sans;}
+a{color:white;text-decoration:none;font-size:18;font-family:pt sans;}
+a:hover{color:yellow;}
+@media (max-width: 800px) { header {font-size: 26px;} }
+@media (max-width: 800px) { a {font-size: 14px;} }
+@media (max-width: 800px) { #navbar {width: 190px;} }
+@media (max-width: 800px) {section {padding-left:230px;} }
+</style>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@400;500;700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="navbar">
+        <header >CSS Flexbox</header>
+        <a class="nav-link" href="#display:_flex">display: flex</a>
+        <a class="nav-link" href="#justify-content_property">justify-content property</a>
+        <a class="nav-link" href="#align-items_property">align-items property</a>
+        <a class="nav-link" href="#flex-wrap_property">flex-wrap property</a>
+        <a class="nav-link" href="#flex-shrink_property">flex-shrink property</a>
+        <a class="nav-link" href="#flex-grow_property">flex-grow property</a>
+        <a class="nav-link" href="#flex-basis_property">flex-basis property</a>
+        <a class="nav-link" href="#flex_shorthand_property">flex shorthand property</a>
+        <a class="nav-link" href="#order_property">order property</a>
+        <a class="nav-link" href="#align-self_property">align-self property</a>
+    </nav>
+    <main id="main-doc">
+        <section id="display:_flex" class="main-section">
+            <header>display: flex</header>
+            <p>Adding display:flex to an element turns it into a flex container. Placing the CSS property display: flex; on an element allows you to use other flex properties to build a responsive page.This makes it possible to align any children of that element into rows or columns. You do this by adding the flex-direction property to the parent item and setting it to row (places the flex items side-by-side from left-to-right) or column (places the flex items in a vertical stack from top-to-bottom). Other options for flex-direction are row-reverse and column-reverse. The default value for the flex-direction property is row.</p>
+            <div id="code">
+                <code> display: flex;<br>flex-direction: row-reverse; 
+                </code>
+            </div>
+        </section><br>
+        <section id="justify-content_property" class="main-section">
+            <header>justify-content property</header>
+            <p>It is common to want to tell CSS how to align and space out the flex items a certain way. the direction the flex items are arranged is called the main axis. For a row, this is a horizontal line that cuts through each item. And for a column, the main axis is a vertical line through the items. There are several options for how to space the flex items along the line that is the main axis:</p>
+            <p>1. One of the most commonly used is justify-content: center; which aligns all the flex items to the center inside the flex container. </p>
+            <p>2. flex-start: aligns items to the start of the flex container. For a row, this pushes the items to the left of the container. For a column, this pushes the items to the top of the container. This is the default alignment if no justify-content is specified.</p>
+            <p>3. flex-end: aligns items to the end of the flex container. For a row, this pushes the items to the right of the container. For a column, this pushes the items to the bottom of the container.</p>
+            <p>4. space-between: aligns items to the center of the main axis, with extra space placed between the items. The first and last items are pushed to the very edge of the flex container. For example, in a row the first item is against the left side of the container, the last item is against the right side of the container, then the remaining space is distributed evenly among the other items.</p>
+            <p>5. space-around: similar to space-between but the first and last items are not locked to the edges of the container, the space is distributed around all the items with a half space on either end of the flex container.</p>
+            <p>6. space-evenly: Distributes space evenly between the flex items with a full space at either end of the flex container.</p>
+            <div id="code">
+                <code>
+                    <ol>
+                        <li>justify-content: center;</li>
+                        <li>justify-content: flex-start;</li>
+                        <li>justify-content: flex-end;</li>
+                        <li>justify-content: space-between;</li>
+                        <li>justify-content: space-around;</li>
+                        <li>justify-content: space-evenly;</li>
+                    </ol>
+                </code>
+            </div>
+        </section><br>
+        <section id="align-items_property" class="main-section">
+            <header>align-items property</header>
+            <p>Flex containers also have a cross axis which is the opposite of the main axis. For rows, the cross axis is vertical and for columns, the cross axis is horizontal. CSS offers the align-items property to align flex items along the cross axis. For a row, it tells CSS how to push the items in the entire row up or down within the container. And for a column, how to push all the items left or right within the container.</p>
+            <p>1. flex-start: aligns items to the start of the flex container. For rows, this aligns items to the top of the container. For columns, this aligns items to the left of the container.</p>
+            <p>2. flex-end: aligns items to the end of the flex container. For rows, this aligns items to the bottom of the container. For columns, this aligns items to the right of the container.</p>
+            <p>3. center: align items to the center. For rows, this vertically aligns items (equal space above and below the items). For columns, this horizontally aligns them (equal space to the left and right of the items).</p>
+            <p>4. stretch: stretch the items to fill the flex container. For example, rows items are stretched to fill the flex container top-to-bottom. This is the default value if no align-items value is specified.</p>
+            <p>5. baseline: align items to their baselines. La baseline seria el borde inferior del elemento.</p>
+            <div id="code">
+                <code>
+                    <ol>
+                        <li>align-items: flex-start;</li>
+                        <li>align-items: flex-end;</li>
+                        <li>align-items: center;</li>
+                        <li>align-items: stretch;</li>
+                        <li>align-items: baseline;</li>
+                    </ol>
+                </code>
+            </div>
+        </section><br>
+        <section id="flex-wrap_property" class="main-section">
+            <header>flex-wrap property</header>
+            <p> This splits a flex container into multiple rows (or columns). By default, a flex container will fit all flex items together. For example, a row will all be on one line. However, using the flex-wrap property tells CSS to wrap items. This means extra items move into a new row or column. The break point of where the wrapping happens depends on the size of the items and the size of the container.</p>
+            <p>CSS also has options for the direction of the wrap:</p>
+            <p>1. nowrap: this is the default setting, and does not wrap items.</p>
+            <p>2. wrap: divide the items in multiple rows from top to bottom if they are rows and multiple columnas from left to right if they are columns.</p>
+            <p>3. wrap-reverse: wraps items onto multiple lines from bottom-to-top if they are in rows and right-to-left if they are in columns.</p>
+            <div id="code">
+            <code>
+                <ol>
+                    <li>flex-wrap: nowrap;</li>
+                    <li>flex-wrap: wrap;</li>
+                    <li>flex-wrap: wrap-reverse;</li>
+                </ol>
+            </code>
+            </div>
+        </section><br>
+        <section id="flex-shrink_property" class="main-section">
+            <header>flex-shrink property</header>
+            <p>So far, all the properties in the challenges apply to the flex container (the parent of the flex items). However, there are several useful properties for the flex items. The first is the flex-shrink property. When it's used, it allows an item to shrink if the flex container is too small. Items shrink when the width of the parent container is smaller than the combined widths of all the flex items within it. The flex-shrink property takes numbers as values. The higher the number, the more it will shrink compared to the other items in the container. For example, if one item has a flex-shrink value of 1 and the other has a flex-shrink value of 3, the one with the value of 3 will shrink three times as much as the other.</p>
+            <div id="code">
+                <code> flex-shrink: 1; </code>
+            </div>
+        </section><br>
+        <section id="flex-grow_property" class="main-section">
+            <header>Flex-grow property</header>
+            <p>The opposite of flex-shrink is the flex-grow property. Recall that flex-shrink controls the size of the items when the container shrinks. The flex-grow property controls the size of items when the parent container expands. if one item has a flex-grow value of 1 and the other has a flex-grow value of 3, the one with the value of 3 will grow three times as much as the other.</p>
+            <div id="code">
+                <code> flex-grow: 1; </code>
+            </div>
+        </section><br>
+        <section id="flex-basis_property" class="main-section">
+            <header>flex-basis property</header>
+            <p>The flex-basis property specifies the initial size of the item before CSS makes adjustments with flex-shrink or flex-grow. The units used by the flex-basis property are the same as other size properties (px, em, %, etc.). The value auto sizes items based on the content.</p>
+            <div id="code">
+                <code>flex-basis: 10em;</code>
+            </div>
+        </section><br>
+        <section id="flex_shorthand_property" class="main-section">
+            <header>Flex shorthand property</header>
+            <p>There is a shortcut available to set several flex properties at once. The flex-grow, flex-shrink, and flex-basis properties can all be set together by using the flex property. For example, flex: 1 0 10px; will set the item to flex-grow: 1;, flex-shrink: 0;, and flex-basis: 10px;. The default property settings are flex: 0 1 auto;.</p>
+            <div id="code">
+                <code> #box-1 {flex: 2 2 150px;}<br>#box-2 {flex: 1 1 150px;} 
+                </code>
+            </div>
+        </section><br>
+        <section id="order_property" class="main-section">
+            <header>Order Property</header>
+            <p>The order property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.</p>
+            <div id="code">
+                <code>#box-1 {order: 2;}<br>#box-2 {order: 1;}
+                </code>
+            </div>
+        </section><br>
+        <section id="align-self_property" class="main-section">
+            <header>align-self property</header>
+            <p>This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties float, clear, and vertical-align do not work on flex items. align-self accepts the same values as align-items and will override any value set by the align-items property.</p>
+            <div id="code">
+                <code>#box-1 { align-self: center;}<br>#box-2 { align-self: flex-end;}
+                </code>
+            </div>
+        </section>
+    </main>
+</body>
